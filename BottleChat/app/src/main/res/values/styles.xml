@@ -1,11 +1,18 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <!--THEMES-->
+    <style name="Theme.BottleChat.Start" parent="@android:style/Theme.Holo.Light">
+        <item name="android:actionBarStyle">@style/ActionBar.Transparent.BottleChat.Start</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!--ACTION BAR-->
+    <style name="ActionBar.Transparent.BottleChat.Start" parent="android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:background">#ff527da3</item>
+        <item name="android:logo">@drawable/transparent</item>
+        <item name="android:title">""</item>
     </style>
 
 </resources>
