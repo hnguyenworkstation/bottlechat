@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">Bottle Chat</string>
+
+    <!-- Login Intro -->
+    <string name="slice1_title">Bottle Chat</string>
+    <string name="slice2_title">Free</string>
+    <string name="slice3_title">Locally</string>
+    <string name="slice4_title">Securely</string>
+    <string name="slice5_title">Contribute</string>
+    <string name="slice6_title">Connected</string>
+    <string name="slice7_title">Cloud-Based</string>
+
+    <string name="slice1_message">The world\'s <![CDATA[<b>fastest</b>]]> social app.<![CDATA[<br/>]]>It is <![CDATA[<b>free</b>]]> and <![CDATA[<b>secure</b>]]>.</string>
+    <string name="slice2_message"><![CDATA[<b>BottleChat</b>]]> is free forever. No ads.<![CDATA[<br/>]]>No subscription fees.</string>
+    <string name="slice3_message"><![CDATA[<b>BottleChat</b>]]> helps you making new friends<![CDATA[<br/>]]>tracking things happen locally</string>
+    <string name="slice4_message"><![CDATA[<b>BottleChat</b>]]> keeps your messages safe<![CDATA[<br/>]]>from hacker attacks.</string>
+    <string name="slice5_message"><![CDATA[<b>BottleChat</b>]]> helps things around you<![CDATA[<br/>]]>better!</string>
+    <string name="slice6_message"><![CDATA[<b>BottleChat</b>]]> connects everyone<![CDATA[<br/>]]>around the world</string>
+    <string name="slice7_message"><![CDATA[<b>BottleChat</b>]]> lets you access your messages<![CDATA[<br/>]]>from multiple devices.</string>
 </resources>

@@ -1,4 +1,4 @@
-cpackage com.onlineteammakers.bottlechat;
+package com.onlineteammakers.bottlechat;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
