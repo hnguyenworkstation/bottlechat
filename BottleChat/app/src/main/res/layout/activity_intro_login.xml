@@ -13,7 +13,7 @@
         android:layout_width="498dp"
         android:layout_height="528dp"
         android:layout_gravity="center"
-        android:background="@drawable/btn_shadow">
+        android:background="@drawable/btnshadow">
 
         <include layout="@layout/intro_layout_content"/>
 

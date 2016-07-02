@@ -17,4 +17,8 @@
     <string name="slice5_message"><![CDATA[<b>BottleChat</b>]]> helps things around you<![CDATA[<br/>]]>better!</string>
     <string name="slice6_message"><![CDATA[<b>BottleChat</b>]]> connects everyone<![CDATA[<br/>]]>around the world</string>
     <string name="slice7_message"><![CDATA[<b>BottleChat</b>]]> lets you access your messages<![CDATA[<br/>]]>from multiple devices.</string>
+
+    <!-- Login Button -->
+    <string name="login_by_phone">VERIFY PHONE NUMBER</string>
+    <string name="login_by_options">LOGIN OPTIONS</string>
 </resources>

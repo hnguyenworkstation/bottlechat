@@ -51,10 +51,15 @@
         android:largeHeap="true"
         android:theme="@style/Theme.BottleChat.Start">
 
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
         </activity>
 
-        <activity android:name=".IntroLoginActivity">
+        <activity
+            android:name=".IntroLoginActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

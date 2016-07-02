@@ -8,11 +8,45 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="Theme.BottleChat" parent="@android:style/Theme.Holo.Light">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBarOverlay">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:itemTextAppearance">@style/ActionBar.Transparent.BottleChat.Item</item>
+        <item name="android:listViewStyle">@style/Theme.BottleChat.ListView</item>
+        <item name="android:listChoiceBackgroundIndicator">@drawable/list_selector</item>
+        <item name="android:editTextStyle">@style/Theme.BottleChat.EditText</item>
+        <item name="android:actionBarItemBackground">@drawable/intro_bar_style</item>
+    </style>
+
     <!--ACTION BAR-->
     <style name="ActionBar.Transparent.BottleChat.Start" parent="android:style/Widget.Holo.Light.ActionBar">
         <item name="android:background">#ff527da3</item>
         <item name="android:logo">@drawable/transparent</item>
         <item name="android:title">" "</item>
+    </style>
+
+    <!--ACTION BAR ITEMS-->
+    <style name="ActionBar.Transparent.BottleChat.Item" parent="android:TextAppearance.Widget.IconMenu.Item">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <!--LIST VIEW-->
+    <style name="Theme.BottleChat.ListView" parent="@android:style/Widget.ListView">
+        <item name="android:listSelector">@drawable/list_selector</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:divider">@color/divider</item>
+    </style>
+
+    <!--EDIT TEXT-->
+    <style name="Theme.BottleChat.EditText" parent="android:Widget.EditText">
+        <item name="android:background">@drawable/text_edit_effect</item>
+        <item name="android:textColor">#000000</item>
     </style>
 
 </resources>
