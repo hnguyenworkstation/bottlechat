@@ -21,4 +21,11 @@
     <!-- Login Button -->
     <string name="login_by_phone">VERIFY PHONE NUMBER</string>
     <string name="login_by_options">LOGIN OPTIONS</string>
+
+    <!-- First time User Registration-->
+    <string name="user_name_reg">Full Name</string>
+    <string name="user_nickname_reg">Nickname</string>
+    <string name="user_email_reg">Email Address (optional)</string>
+    <string name="user_phonenum_reg">Your Phone number (optional)</string>
+    <string name="user_reg_btn">Create Account</string>
 </resources>

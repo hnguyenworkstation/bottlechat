@@ -113,7 +113,7 @@ public class IntroLoginActivity extends Activity {
 
                 // Implementing UserInformation
                 // -- Will lead to another page for more registration
-                user.setPhoneNumber(phoneNumber);
+                user.setUserPhoneNumber(phoneNumber);
             }
 
             @Override
