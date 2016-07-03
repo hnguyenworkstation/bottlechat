@@ -1,31 +1,40 @@
 package com.onlineteammakers.bottlechat;
 
-import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
 import android.app.Activity;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.res.Resources;
 import android.database.DataSetObserver;
-import android.media.Image;
-import android.os.Build;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.digits.sdk.android.AuthCallback;
+import com.digits.sdk.android.DigitsAuthButton;
+import com.digits.sdk.android.DigitsException;
+import com.digits.sdk.android.DigitsSession;
+import com.onlineteammakers.bottlechat.Intent.UserInformation;
 import com.onlineteammakers.bottlechat.TelegramProperties.BuildVars;
+import com.digits.sdk.android.Digits;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterCore;
+import io.fabric.sdk.android.Fabric;
 
 public class IntroLoginActivity extends Activity {
+
+    // Note: Your consumer key and secret should be obfuscated in your source code before shipping.
+    private static final String TWITTER_KEY = "oSCN4HAVNMf9whsHyITpuzJAH";
+    private static final String TWITTER_SECRET = "xAy3q6VJxQ4glWIEtzKomEzrsroJqILlsfsYxzaRTiQHNToxNk";
 
     private ViewPager viewPager;
     private ImageView topImage1;
@@ -37,11 +46,14 @@ public class IntroLoginActivity extends Activity {
     private int[] icons;
     private int[] titles;
     private int[] messages;
+    private UserInformation user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_BottleChat);
         super.onCreate(savedInstanceState);
+        TwitterAuthConfig authConfig = new TwitterAuthConfig(TWITTER_KEY, TWITTER_SECRET);
+        Fabric.with(this, new TwitterCore(authConfig), new Digits());
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
@@ -85,18 +97,39 @@ public class IntroLoginActivity extends Activity {
         };
 
         viewPager = (ViewPager) findViewById(R.id.intro_view_pager);
-        TextView phoneLoginBtn = (TextView) findViewById(R.id.phone_login_button);
-        TextView otherLoginBtn = (TextView) findViewById(R.id.login_options_button);
+        // Implementing Login by other options
+        Button otherLoginBtn = (Button) findViewById(R.id.login_options_button);
+        otherLoginBtn.setText(R.string.login_by_options);
+        otherLoginBtn.setBackgroundColor(getResources().getColor(R.color.intro_button));
+
+        // Implementing buttons to login by phone number
+        DigitsAuthButton phoneLoginBtn = (DigitsAuthButton) findViewById(R.id.phone_login_button);
+        phoneLoginBtn.setCallback(new AuthCallback() {
+            @Override
+            public void success(DigitsSession session, String phoneNumber) {
+                // TODO: associate the session userID with your user model
+                Toast.makeText(getApplicationContext(), "Authentication successful for "
+                        + phoneNumber, Toast.LENGTH_LONG).show();
+
+                // Implementing UserInformation
+                // -- Will lead to another page for more registration
+                user.setPhoneNumber(phoneNumber);
+            }
+
+            @Override
+            public void failure(DigitsException exception) {
+                Log.d("Digits", "Sign in with Digits failure", exception);
+            }
+        });
 
         phoneLoginBtn.setText(R.string.login_by_phone);
-        otherLoginBtn.setText(R.string.login_by_options);
+        phoneLoginBtn.setBackgroundColor(getResources().getColor(R.color.intro_button));
 
         topImage1 = (ImageView) findViewById(R.id.icon_image1);
         topImage2 = (ImageView) findViewById(R.id.icon_image2);
         listSlices = (ViewGroup) findViewById(R.id.slice_dots);
         topImage2.setVisibility(View.GONE);
 
-        // Todo: Need lisence from Telegram Messenger app
         viewPager.setAdapter(new IntroAdapter());
         viewPager.setPageMargin(0);
         viewPager.setOffscreenPageLimit(1);
@@ -176,20 +209,6 @@ public class IntroLoginActivity extends Activity {
             }
         });
 
-        phoneLoginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (btnPressed) {
-                    return;
-                }
-                btnPressed = true;
-                // Todo: Change LaunchActivity to Fabric API
-                // Intent intent2 = new Intent(IntroLoginActivity.this, LaunchActivity.class);
-                // intent2.putExtra("fromIntro", true);
-                // startActivity(intent2);
-                finish();
-            }
-        });
 
         if (BuildVars.DEBUG_VERSION) {
             phoneLoginBtn.setOnLongClickListener(new View.OnLongClickListener() {

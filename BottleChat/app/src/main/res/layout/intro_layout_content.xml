@@ -35,7 +35,8 @@
             android:layout_height="match_parent"
             android:id="@+id/intro_view_pager"/>
 
-        <TextView android:layout_width="wrap_content"
+        <com.digits.sdk.android.DigitsAuthButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="336dp"
             android:background="@drawable/reg_button"
@@ -49,11 +50,12 @@
             android:paddingBottom="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:id="@+id/phone_login_button"/>
+            android:id="@+id/phone_login_button" />
 
-        <TextView android:layout_width="wrap_content"
+        <com.digits.sdk.android.DigitsAuthButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="406dp"
+            android:layout_marginTop="396dp"
             android:background="@drawable/reg_button"
             android:layout_gravity="center_horizontal"
             android:textSize="16dp"
