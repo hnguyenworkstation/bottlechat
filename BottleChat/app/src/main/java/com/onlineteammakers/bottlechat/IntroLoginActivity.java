@@ -14,6 +14,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -232,7 +233,7 @@ public class IntroLoginActivity extends Activity {
             container.addView(view, 0);
 
             headerTextView.setText(getString(titles[position]));
-            messageTextView.setText(getString(messages[position]));
+            messageTextView.setText(Html.fromHtml(getString(messages[position])));
             return view;
         }
 
