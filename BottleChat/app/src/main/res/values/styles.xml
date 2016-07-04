@@ -50,12 +50,13 @@
     </style>
 
     <!-- FIRST TIME USER BUTTON -->
-    <style name="Theme.BottleChat.FirstTimeUser" parent="Theme.AppCompat.NoActionBar">
-        <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">@color/primary_dark</item>
-        <item name="colorAccent">@color/black</item>
+    <style name="Theme.BottleChat.MainLayout" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 
-        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:colorBackground">@android:color/white</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:itemTextAppearance">@style/ActionBar.Transparent.BottleChat.Item</item>
 
         <item name="colorControlNormal">@color/iron</item>
         <item name="colorControlActivated">@color/colorPrimary</item>
@@ -70,6 +71,15 @@
         <item name="colorAccent">@color/white</item>
         <item name="android:textColorPrimary">@color/iron</item>
         <item name="android:background">#0099ff</item>
+    </style>
+
+    <!-- TABS STYLE -->
+    <style name="BottleChat.TabBar.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
 </resources>

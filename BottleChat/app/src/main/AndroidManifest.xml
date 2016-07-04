@@ -64,21 +64,24 @@
         android:hardwareAccelerated="@bool/useHardwareAcceleration"
         android:icon="@mipmap/ic_launcher"
         android:largeHeap="true"
-        android:theme="@style/Theme.BottleChat.Start">
+        android:theme="@style/BottleChat">
 
         <activity
             android:name=".MainActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"></activity>
+            android:launchMode="singleTop"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
 
         <activity
             android:name=".IntroLoginActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
@@ -87,6 +90,7 @@
 
         <activity android:name=".FirstTimeUserRegisterActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
+
         </activity>
 
     </application>

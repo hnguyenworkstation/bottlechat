@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-        <style name="Theme.BottleChat.FirstTimeUser" parent="Theme.AppCompat.NoActionBar">
-                <item name="colorPrimary">@color/primary</item>
-                <item name="colorPrimaryDark">@color/primary_dark</item>
-                <item name="colorAccent">@color/black</item>
+        <style name="Theme.BottleChat.MainLayout" parent="Theme.AppCompat.NoActionBar">
+                <item name="colorPrimary">@color/colorPrimary</item>
+                <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
 
-                <item name="android:windowBackground">@color/primary</item>
+                <item name="android:colorBackground">@android:color/white</item>
+                <item name="android:windowBackground">@android:color/white</item>
+                <item name="android:itemTextAppearance">@style/ActionBar.Transparent.BottleChat.Item</item>
 
                 <item name="colorControlNormal">@color/iron</item>
                 <item name="colorControlActivated">@color/colorPrimary</item>
@@ -20,4 +21,13 @@
                 <item name="android:textColorPrimary">@color/iron</item>
                 <item name="android:background">@color/primary</item>
         </style>
+
+    <style name="BottleChat" parent="BottleChat.TabBar.Base">
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+        <item name="android:windowSharedElementEnterTransition">@android:transition/move</item>
+        <item name="android:windowSharedElementExitTransition">@android:transition/move</item>
+    </style>
+
 </resources>
