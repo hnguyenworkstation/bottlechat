@@ -24,4 +24,12 @@
     <color name="iron">#CCCCCC</color>
     <color name="white">#FFFFFF</color>
 
+    <!-- Post item color -->
+    <color name="post_item_vertical_line">#fff36c77</color>
+    <color name="post_item_textcolor">#0196a7</color>
+    <color name="post_item_textcolor_dark">#FF01798A</color>
+    <color name="post_item_textcolor_light">#ff01b7d1</color>
+    <color name="post_item_background_olor">#449bdd</color>
+    <color name="post_item_textcolor_temp">#aa111111</color>
+
 </resources>

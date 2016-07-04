@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="4dp"
+        android:alpha="0.0"
+        android:layout_height="match_parent"
+        android:background="@color/post_item_vertical_line"
+        android:id="@+id/is_user_skoot">
+    </View>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:baselineAligned="false"
+            android:id="@+id/post_container">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.85">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text=""
+                        android:id="@+id/handleText"
+                        android:textColor="@color/post_item_textcolor_temp"
+                        android:textStyle="bold|italic"
+                        android:layout_marginBottom="2dp"
+                        android:textSize="17sp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text=""
+                        android:id="@+id/postText"
+                        android:layout_marginBottom="5dp"
+                        android:autoLink="all"
+                        android:linksClickable="true"
+                        />
+
+                    <com.onlineteammakers.bottlechat.Intent.PostImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:id="@+id/post_image"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginRight="50dp"
+                        android:visibility="gone"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:focusable="false"
+                        android:background="@color/iron"
+                        android:src="@color/iron"
+                        android:elevation="8dp"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.15"
+                android:layout_gravity="center_vertical">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/upvote"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/vote_up_inactive"
+                    android:gravity="center_horizontal"
+                    android:focusable="false"/>
+
+                <com.onlineteammakers.bottlechat.Intent.PostTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:id="@+id/voteCount"
+                    android:layout_below="@+id/upvote"
+                    android:gravity="center_horizontal"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="16sp"
+                    android:textColor="@color/post_item_textcolor"/>
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/downvote"
+                    android:layout_below="@+id/voteCount"
+                    android:layout_alignLeft="@+id/upvote"
+                    android:background="@drawable/vote_down_inactive"
+                    android:focusable="false"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/post_container"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:scaleType="fitXY"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/comment_inactive"
+                    android:id="@+id/commentImage"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginEnd="3dp"/>
+
+                <com.onlineteammakers.bottlechat.Intent.PostTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_gravity="center_vertical"
+                    android:text=""
+                    android:id="@+id/commentsCount"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/favorite"
+                    android:background="@drawable/favorite_icon_inactive"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:focusable="false"
+                    />
+
+                <com.onlineteammakers.bottlechat.Intent.PostTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text=""
+                    android:id="@+id/favoritesCount"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/flagButton"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/flag_inactive"
+                    android:layout_marginLeft="15dp"
+                    android:focusable="false"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end">
+
+                <ImageView
+                    android:src="@drawable/ic_timer"
+                    android:scaleType="fitXY"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="3dp"
+                    />
+
+                <com.onlineteammakers.bottlechat.Intent.PostTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_gravity="center_vertical"
+                    android:text="1min"
+                    android:textColor="@color/post_item_textcolor"
+                    android:id="@+id/timestamp"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:id="@+id/dummy"
+                    android:background="@drawable/flag_inactive"
+                    android:visibility="gone"
+                    android:focusable="false"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
