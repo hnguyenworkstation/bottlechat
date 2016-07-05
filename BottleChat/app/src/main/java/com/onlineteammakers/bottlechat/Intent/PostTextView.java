@@ -26,7 +26,7 @@ public class PostTextView extends TextView {
     }
 
     protected void init() {
-        Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "font/Ubuntu-Regular.ttf");
+        Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "fonts/Ubuntu-Regular.ttf");
         setTypeface(tf);
     }
 }
