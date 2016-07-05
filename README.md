@@ -1,5 +1,4 @@
-# bottlechat
-<h3>Bottle Chat</h3>
+<h1>Bottle Chat</h1>
 
 <h2>Dashboard Workflow</h2>:
 * Install: ZenHub extension from https://www.zenhub.com/ to see the dashboard in GitHub Repo.
