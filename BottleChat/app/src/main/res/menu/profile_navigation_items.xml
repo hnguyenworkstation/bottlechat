@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:icon="@drawable/ic_update_black"
+            android:tint="@color/tw__light_gray"
+            android:title="One" />
+        <item
+            android:icon="@drawable/ic_account_circle_black"
+            android:tint="@color/tw__light_gray"
+            android:title="Two" />
+        <item
+            android:icon="@drawable/ic_explore_black"
+            android:tint="@color/tw__light_gray"
+            android:title="Three" />
+    </group>
+</menu>

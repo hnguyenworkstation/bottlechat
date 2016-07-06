@@ -16,29 +16,13 @@
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Toolbar Title"
-                android:layout_gravity="center"
-                android:id="@+id/toolbar_title" />
-
-        </android.support.v7.widget.Toolbar>
-
         <android.support.design.widget.TabLayout
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="@dimen/custom_tab_layout_height"
             app:tabMode="fixed"
-            app:tabGravity="fill" />
+            app:tabGravity="center"
+            />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -47,42 +31,47 @@
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="100dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
-
+        android:layout_marginBottom="@dimen/main_bottom_bar_height"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:scaleType="fitXY"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/main_bottom_bar_height"
         android:id="@+id/bottom_bar_holder"
         android:background="@drawable/bottom_box"
-        android:paddingTop="6dp"
-        android:paddingBottom="6dp"
         android:layout_gravity="bottom"
         >
 
-        <LinearLayout
+        <android.support.v7.widget.ButtonBarLayout
+            android:stateListAnimator="@drawable/translation_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/main_bottom_bar_height"
+            android:id="@+id/main_social_btn"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/ic_update_black"
+            android:textSize="14sp"
+            android:textColor="@color/tw__light_gray"
+            android:layout_centerVertical="true"/>
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_centerInParent="true">
+            android:layout_centerInParent="true"
+            android:text="HAHA"/>
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@drawable/ic_explore_black"
-                />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:id="@+id/commentSkoot"
-                android:textColor="@color/post_item_background_olor"
-                android:text="SKOOT"
-                android:background="@android:color/transparent"
-                />
-        </LinearLayout>
-
+        <android.support.v7.widget.ButtonBarLayout
+            android:stateListAnimator="@drawable/translation_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/main_bottom_bar_height"
+            android:id="@+id/main_profile_btn"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:background ="@drawable/ic_account_circle_black"
+            android:textSize="14sp"
+            android:textColor="@color/tw__light_gray"
+            android:layout_centerVertical="true"/>
     </RelativeLayout>
 
 </android.support.design.widget.CoordinatorLayout>

@@ -1,11 +1,14 @@
 package com.onlineteammakers.bottlechat;
 
 import android.content.Context;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -25,21 +28,18 @@ public class MainActivity extends AppCompatActivity {
 
     private static TabLayout tabLayout;
     private Toolbar toolbar;
+    private DrawerLayout mDrawerLayout;
 
     private static int[] _unSelTabIcons = {
-            R.drawable.ic_home_black,
             R.drawable.ic_update_black,
             R.drawable.ic_track_changes_black,
-            R.drawable.ic_explore_black,
-            R.drawable.ic_account_circle_black
+            R.drawable.ic_explore_black
     };
 
     private static int[] _selTabIcons = {
-            R.drawable.ic_home_white,
             R.drawable.ic_update_white,
             R.drawable.ic_track_changes_white,
-            R.drawable.ic_explore_white,
-            R.drawable.ic_account_circle_white
+            R.drawable.ic_explore_white
     };
 
     @Override
@@ -97,11 +97,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(this.getBaseContext(), getSupportFragmentManager());
-        adapter.addFragment(new HomeFragment(), "Home");
-        adapter.addFragment(new CommunicateFragment(), "Chat");
         adapter.addFragment(new SeekAroundFragment(), "Seek");
+        adapter.addFragment(new SeekAroundFragment(), "Channels");
         adapter.addFragment(new ExploreFragment(), "Explore");
-        adapter.addFragment(new ProfileFragment(), "Me");
 
         viewPager.setAdapter(adapter);
     }
@@ -129,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return null;
+            return mFragmentTitle.get(position);
         }
 
         public void addFragment(Fragment fragment, String title) {
